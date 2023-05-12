@@ -1,0 +1,87 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+}
+
+body {
+    background-color: #000000;
+    height: 100%;
+}
+
+.section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: linear-gradient(to top, #0a2a43, transparent);
+}
+
+.section:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0a2a43;
+    z-index: 10000;
+    mix-blend-mode: color;
+}
+
+
+.mountain, .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.moon {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    margin-left: 10%;
+    object-fit: cover;
+    pointer-events: none;
+    width: calc(var(--index)*8);
+    height: calc(var(--index)*12);
+}
+.mountain {
+    z-index: 2;
+}
+
+.sect {
+    color: #fff;
+    font-size: calc(var(--index) / 1.5) ;
+    width:80vw;
+    letter-spacing:calc(var(--index) / 5);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text {
+    position: relative;
+    color: #fff;
+    font-size: calc(var(--index)*4);
+    z-index: 1;
+    margin-bottom: calc(var(--index)*5);
+}
